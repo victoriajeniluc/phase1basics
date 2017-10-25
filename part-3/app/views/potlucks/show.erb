@@ -4,4 +4,18 @@
     <p class="details"><b>Date:</b> <%= format_month_day(@potluck.starts_at) %></p>
     <p class="details"><b>Time:</b> <%= format_time(@potluck.starts_at) %></p>
     <p class="details"><b>Host:</b> <%= @potluck.host.username %></p>
-</div>
+  </div>
+
+  <div id="edit-potluck-button">
+      <% if authorized?(@potluck.host) %>
+        <a href="/potlucks/<%= @potluck.id %>/edit">Edit</a> |
+        <div id="logout-button">
+          <form method="POST" action="/potlucks/<%= @potluck.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete">
+          </form>
+        </div>
+        <br>
+      <% end %>
+  </div>
+

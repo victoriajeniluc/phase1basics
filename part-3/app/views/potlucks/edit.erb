@@ -1,0 +1,20 @@
+<center><h2>Edit Potluck</h2></center>
+
+  <% if @errors %>
+    <%= erb :"_errors", locals: {errors: @errors} %>
+  <% end %>
+
+  <div id="edit-potluck-form">
+    <form method="POST" action="/potlucks/<%= @potluck.id%>">
+      <input type="hidden" name="_method" value="PUT">
+      <div class="form-field">
+        <label name="name">Name:</label><br>
+        <br><input type="text" name="potluck[name]" value="<%= @potluck.name %>"><br>
+        <br><label name="location">Location:</label><br>
+        <br><input type="text" name="potluck[location]" value="<%= @potluck.location %>"><br>
+        <br><label name="starts_at">Start at:</label><br>
+        <br><input type="datetime-local" name="potluck[starts_at]" value="<%= format_datetimelocal(@potluck.starts_at) %>"><br>
+      </div>
+      <br><input type="submit" value="Save Edit">
+    </form>
+  <div>

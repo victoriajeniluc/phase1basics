@@ -10,4 +10,12 @@ helpers do
   def format_time(time)
     time.strftime("%I:%M")
   end
+
+  def format_datetimelocal(datetime)
+    if datetime
+      datetime.strftime("%Y-%m-%dT%H:%M:%S")
+    else
+      return ""
+    end
+  end
 end

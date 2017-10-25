@@ -29,3 +29,32 @@ get '/potlucks/:id' do
   @potluck = find_and_ensure_potluck(params[:id])
   erb :"potlucks/show"
 end
+
+get '/potlucks/:id/edit' do
+  authenticate!
+  @potluck = find_and_ensure_potluck(params[:id])
+  authorize!(@potluck.host)
+  erb :"potlucks/edit"
+end
+
+
+put '/potlucks/:id' do
+  authenticate!
+  @potluck = find_and_ensure_potluck(params[:id])
+  authorize!(@potluck.host)
+
+  if @potluck.update(params[:potluck])
+    redirect "/potlucks/#{@potluck.id}"
+  else
+    @errors = @potluck.errors.full_messages
+    erb :"potlucks/edit"
+  end
+end
+
+delete '/potlucks/:id' do
+  authenticate!
+  @potluck = find_and_ensure_potluck(params[:id])
+  authorize!(@potluck.host)
+  @potluck.destroy
+  redirect '/'
+end
