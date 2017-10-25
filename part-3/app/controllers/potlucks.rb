@@ -26,6 +26,8 @@ post '/potlucks' do
 end
 
 get '/potlucks/:id' do
+  @message = params[:message]
+  @food_item = params[:food_item]
   @potluck = find_and_ensure_potluck(params[:id])
   erb :"potlucks/show"
 end
@@ -57,5 +59,19 @@ delete '/potlucks/:id' do
   authorize!(@potluck.host)
   @potluck.destroy
   redirect '/'
+end
+
+post '/potlucks/:id/contributions' do
+  authenticate!
+  @potluck = find_and_ensure_potluck(params[:id])
+  @signup = Contribution.new(food_item: params[:food_item], attendee: current_user, potluck: @potluck)
+
+  if @signup.save
+    @message = true
+    redirect "/potlucks/#{@potluck.id}?message=#{@message}&food_item=#{@signup.food_item}"
+  else
+    @errors = @signup.errors.full_messages
+    erb :"potlucks/show"
+  end
 end
 
