@@ -23,7 +23,7 @@ nav {
   width: 100%;
 }
 
-#form-login, #form-register, #new-potluck-form {
+#form-login, #form-register, #new-potluck-form, #edit-potluck-form {
   text-align: center;
 }
 
