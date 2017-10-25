@@ -1,6 +1,47 @@
+html {
+background-image: url("../tablecloth.jpg");
+ background-repeat: no-repeat;
+}
+
+
 body {
-  margin: 2%;
- font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+  margin: 5%;
+  font: 100 20px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: black;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: white;
+  padding-bottom: 2%
+}
+
+
+#header {
+  font: 100 60px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: #8B4513;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5%;
+}
+
+label {
+  color: #8B4513;
+}
+
+a {
+  text-decoration: none;
+  color: #8B4513;
+}
+
+#header:hover, a:hover {
+  color: red;
+}
+
+h1 {
+  font: 100 30px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: #8B4513;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 #logout-button {
@@ -13,14 +54,46 @@ body {
   padding: 0;
   border: none;
   font: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 nav {
   display: inline-block;
   text-align: right;
   border-bottom: solid black;
-  width: 100%;
+  width: 90%;
+  padding-right: 2%;
+}
+
+.potluck-details {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: solid black;
+}
+
+#attendees {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: solid black;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+#message {
+  color: red;
+}
+
+#boxy {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: solid black;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 #form-login, #form-register, #new-potluck-form, #edit-potluck-form {

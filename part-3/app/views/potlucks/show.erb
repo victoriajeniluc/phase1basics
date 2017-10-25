@@ -1,18 +1,22 @@
 <h2><%= @potluck.name %></h2>
 <div class="potluck-details">
+  <h2>Details</h2>
   <p class="details"><b>Location:</b> <%= @potluck.location%></p>
   <p class="details"><b>Date:</b> <%= format_month_day(@potluck.starts_at) %></p>
   <p class="details"><b>Time:</b> <%= format_time(@potluck.starts_at) %></p>
   <p class="details"><b>Host:</b> <%= @potluck.host.username %></p>
 </div>
 
+<%= erb :'potlucks/_display_attendees', locals: { potluck: @potluck } %>
+
+<div id="boxy">
 <% if @message %>
   <div id="message">
    <h2><%= @message %></h2>
   </div>
 <% else %>
     <% if logged_in? && !authorized?(@potluck.host) %>
-      <%= erb :'potlucks/_new_contribution_form', locals: { potluck: @potluck } %>
+      <%= erb :'potlucks/_new_contribution_form', locals: { potluck: @potluck } %><br>
     <% elsif !logged_in? %>
       <div class="leave-a-contribution">
         <h2>Attend the Potluck</h2>
@@ -25,7 +29,7 @@
       </div>
     <% end %>
 <% end %>
-
+</div>
 
 <div id="edit-potluck-button">
   <% if authorized?(@potluck.host) %>
@@ -40,4 +44,3 @@
   <% end %>
 </div>
 
-<%= erb :'potlucks/_display_attendees', locals: { potluck: @potluck } %>
