@@ -58,3 +58,4 @@ delete '/potlucks/:id' do
   @potluck.destroy
   redirect '/'
 end
+
