@@ -8,38 +8,22 @@
 
 <% if @message %>
   <div id="message">
-    <h2>You signed up to bring <%= @food_item %></h2>
+   <h2><%= @message %></h2>
   </div>
 <% else %>
-  <% if logged_in? && !authorized?(@potluck.host) %>
-  <div class="leave-a-contribution">
-    <center><h2>Attend the Potluck</h2><center>
-      <div id="new-contribution-form">
-        <center>
-          <% if @errors %>
-            <%= erb :"_errors", locals: {errors: @errors} %>
-          <% end %></center>
-
-        <form method="POST" action="/potlucks/<%= @potluck.id %>/contributions">
-          <div class="form-field">
-            <label name="food_item">What dish will you bring?</label><br>
-            <br><input type="text" name="food_item"><br>
-          </div>
-          <br><input type="submit" value="Sign Up">
-        </form>
-      </div>
-  </div>
-  <% elsif !logged_in? %>
+    <% if logged_in? && !authorized?(@potluck.host) %>
+      <%= erb :'potlucks/_new_contribution_form', locals: { potluck: @potluck } %>
+    <% elsif !logged_in? %>
       <div class="leave-a-contribution">
         <h2>Attend the Potluck</h2>
         <p> You must be logged in to be invited to the party 😛</p>
         <br>
         <a href="/sessions/new">login</a>
       </div>
-  <% else %>
+    <% else %>
       <div class="leave-a-contribution">
       </div>
-  <% end %>
+    <% end %>
 <% end %>
 
 
@@ -56,11 +40,4 @@
   <% end %>
 </div>
 
-<div class="potluck-attendees">
-  <h2>Attendees</h2>
-  <ul>
-    <% @potluck.contributions.each do |contribution| %>
-      <li><%= contribution.attendee.username%> will be bringing <%= contribution.food_item %></li>
-    <% end %>
-  </ul>
-</div>
+<%= erb :'potlucks/_display_attendees', locals: { potluck: @potluck } %>

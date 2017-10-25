@@ -1,0 +1,8 @@
+<div class="potluck-attendees">
+  <h2>Attendees</h2>
+  <ul>
+    <% potluck.contributions.each do |contribution| %>
+      <li><%= contribution.attendee.username%> will be bringing <%= contribution.food_item %></li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,18 @@
+<div class="leave-a-contribution">
+  <center><h2>Attend the Potluck</h2><center>
+    <div id="new-contribution-form">
+      <center>
+        <% if @errors %>
+          <%= erb :'_errors', locals: { errors: @errors } %>
+        <% end %>
+      </center>
+
+      <form method="POST" action="/potlucks/<%= potluck.id %>/contributions">
+        <div class="form-field">
+          <label name="food_item">What dish will you bring?</label><br>
+          <br><input type="text" name="food_item"><br>
+        </div>
+        <br><input type="submit" value="Sign Up">
+      </form>
+    </div>
+</div>

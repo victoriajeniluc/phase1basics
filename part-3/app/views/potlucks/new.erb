@@ -1,19 +1,19 @@
 <center><h2>New Potluck</h2></center>
 
-  <% if @errors %>
-    <%= erb :"_errors", locals: {errors: @errors} %>
-  <% end %>
+<% if @errors %>
+  <%= erb :"_errors", locals: { errors: @errors } %>
+<% end %>
 
-  <div id="new-potluck-form">
-    <form method="POST" action="/potlucks">
-      <div class="form-field">
-        <label name="name">Name:</label><br>
-        <br><input type="text" name="potluck[name]"><br>
-        <br><label name="location">Location:</label><br>
-        <br><input type="text" name="potluck[location]"><br>
-        <br><label name="starts_at">Start at:</label><br>
-        <br><input type="datetime-local" name="potluck[starts_at]"><br>
-      </div>
-      <br><input type="submit" value="Save Potluck">
-    </form>
-  <div>
+<div id="new-potluck-form">
+<form method="POST" action="/potlucks">
+  <div class="form-field">
+    <label name="name">Name:</label><br>
+    <br><input type="text" name="potluck[name]"><br>
+    <br><label name="location">Location:</label><br>
+    <br><input type="text" name="potluck[location]"><br>
+    <br><label name="starts_at">Start at:</label><br>
+    <br><input type="datetime-local" name="potluck[starts_at]"><br>
+  </div>
+  <br><input type="submit" value="Save Potluck">
+</form>
+<div>

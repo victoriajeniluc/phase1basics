@@ -17,10 +17,10 @@ potluck2 = Potluck.create(name: "TacoHawk Reunion", location: "Melissa's Place",
 
 potluck3 = Potluck.create(name: "DBC Instructors' Mimosa Night", location: "Paris", starts_at: fake_start_time(10.days.from_now.beginning_of_day), host: user5)
 
-contributions1 = Contribution.create(food_item: "Tacos", attendee: user3)
-contributions2 = Contribution.create(food_item: "Waffles", attendee: user1)
-contributions3 = Contribution.create(food_item: "Rosé", attendee: user4)
-contributions4 = Contribution.create(food_item: "Sloppy Joes", attendee: user2)
+contributions1 = Contribution.create(food_item: "tacos", attendee: user3)
+contributions2 = Contribution.create(food_item: "waffles", attendee: user1)
+contributions3 = Contribution.create(food_item: "rosé", attendee: user4)
+contributions4 = Contribution.create(food_item: "sloppy joes", attendee: user2)
 
 potluck1.contributions << contributions4
 potluck2.contributions << contributions1

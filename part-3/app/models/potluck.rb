@@ -4,7 +4,7 @@ class Potluck < ActiveRecord::Base
 
   validates :location, :name, :starts_at, presence: true
 
-  def self.only_current_potlucks
+  def self.current_potlucks
     self.select do |potluck|
       potluck.starts_at > DateTime.now
     end

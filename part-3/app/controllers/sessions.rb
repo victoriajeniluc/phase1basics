@@ -1,5 +1,5 @@
 get '/sessions/new' do
-  erb :'/sessions/new'
+  erb :'sessions/new'
 end
 
 post '/sessions' do
@@ -9,7 +9,7 @@ post '/sessions' do
     redirect '/'
   else
     @errors = ["Incorrect Password or Username :( Try Again!"]
-    erb :'/sessions/new'
+    erb :'sessions/new'
   end
 end
 
@@ -19,5 +19,5 @@ delete '/sessions' do
 end
 
 get '/not_authorized' do
-  erb :not_authorized
+  erb :'not_authorized'
 end
