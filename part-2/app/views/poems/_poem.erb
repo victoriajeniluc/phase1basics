@@ -1,16 +1,18 @@
-<article id="poem-<%= poem.id %>" class="poem">
-  <div class="poem-details">
-    <h1 class="poem-title">
-      <a href="/poems/<%= poem.id %>" class="link-coral"><%= poem.title %></a>
-    </h1>
+<li class="poem-list-item">
+  <article id="poem-<%= poem.id %>" class="poem">
+    <div class="poem-details">
+      <h1 class="poem-title">
+        <a href="/poems/<%= poem.id %>" class="link-coral"><%= poem.title %></a>
+      </h1>
 
-    <p class="poem-detail-line"><%= authorship_tagline(poem) %></p>
-    <p class="poem-detail-line"><%= applause_report(poem) %></p>
-  </div>
+      <p class="poem-detail-line"><%= authorship_tagline(poem) %></p>
+      <p class="poem-detail-line likes"><%= erb :"poems/_likes", layout: false, locals: {poem: poem} %></p>
+    </div>
 
-  <p class="poem-body handwritten light">
-    <%= with_line_breaks(poem.body) %>
-  </p>
+    <p class="poem-body handwritten light">
+      <%= with_line_breaks(poem.body) %>
+    </p>
 
-  <%= erb :"poems/_poem_applause_form", { layout: false, locals: { poem: poem } } %>
-</article>
+    <%= erb :"poems/_poem_applause_form", { layout: false, locals: { poem: poem } } %>
+  </article>
+</li>
