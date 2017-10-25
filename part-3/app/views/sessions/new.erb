@@ -1,0 +1,15 @@
+<center><h2>Login</h2></center>
+
+  <% if @errors %>
+  <%= erb :'_errors', locals: {errors: @errors} %>
+  <% end %>
+
+  <div id="form-login">
+    <form action="/sessions" method="Post">
+      <label for="email">Email:</label><br>
+      <input type="text" name="email"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" name="password"><br>
+      <br><input type="submit" value="Login"><br>
+    </form>
+  </div>

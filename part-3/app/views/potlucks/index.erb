@@ -1,0 +1,8 @@
+ <br>
+  <% @potlucks.each do |potluck| %>
+    <div id="single-potluck">
+        <h2><a href="/potlucks/<%= potluck.id %>"><%= potluck.name %></a></h2>
+        <h3> <%= format_month_day(potluck.starts_at) %> at <%= potluck.location %><h3>
+    </div>
+  <% end %>
+<br>

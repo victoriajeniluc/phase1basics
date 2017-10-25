@@ -1,0 +1,32 @@
+body {
+  margin: 2%;
+ font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+}
+
+#logout-button {
+  background: none;
+   display: inline-block;
+}
+
+#logout-button input {
+  background: none;
+  padding: 0;
+  border: none;
+  font: inherit;
+  text-decoration: underline;
+}
+
+nav {
+  display: inline-block;
+  text-align: right;
+  border-bottom: solid black;
+  width: 100%;
+}
+
+#form-login, #form-register, #new-potluck-form {
+  text-align: center;
+}
+
+.errors {
+  list-style-type: none;
+}

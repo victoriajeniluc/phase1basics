@@ -1,0 +1,7 @@
+<h2><%= @potluck.name %></h2>
+  <div class="potluck-details">
+    <p class="details"><b>Location:</b> <%= @potluck.location%></p>
+    <p class="details"><b>Date:</b> <%= format_month_day(@potluck.starts_at) %></p>
+    <p class="details"><b>Time:</b> <%= format_time(@potluck.starts_at) %></p>
+    <p class="details"><b>Host:</b> <%= @potluck.host.username %></p>
+</div>

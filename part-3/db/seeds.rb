@@ -10,12 +10,12 @@ user3 = User.create(username: "Melissa", email: "m@gmail.com", password: "runrun
 user4 = User.create(username: "Graham", email: "g@gmail.com", password: "0000000")
 user5 = User.create(username: "Alyssa", email: "a@gmail.com", password: "password")
 
-potluck1 = Potluck.create(name: "Picnic", location: "1033 W Van Buren", starts_at: fake_start_time(Date.current.beginning_of_day, Date.current.end_of_day), host: user2)
+potluck1 = Potluck.create(name: "Picnic", location: "1033 W Van Buren", starts_at: fake_start_time(10.days.from_now.beginning_of_day), host: user2)
 
-potluck2 = Potluck.create(name: "TacoHawk Reunion", location: "Melissa's Place", starts_at: fake_start_time(2.days.from_now.beginning_of_day), host: user3)
+potluck2 = Potluck.create(name: "TacoHawk Reunion", location: "Melissa's Place", starts_at: fake_start_time(10.days.from_now.beginning_of_day), host: user3)
 
 
-potluck3 = Potluck.create(name: "DBC Instructors' Mimosa Night", location: "Paris", starts_at: fake_start_time(4.days.from_now.beginning_of_day), host: user5)
+potluck3 = Potluck.create(name: "DBC Instructors' Mimosa Night", location: "Paris", starts_at: fake_start_time(10.days.from_now.beginning_of_day), host: user5)
 
 contributions1 = Contribution.create(food_item: "Tacos", attendee: user3)
 contributions2 = Contribution.create(food_item: "Waffles", attendee: user1)
